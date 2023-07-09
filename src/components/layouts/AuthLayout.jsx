@@ -69,7 +69,7 @@ const AuthLayout = ({ children, titlePages }) => {
 					alignSelf={"flex-end"}
 					position={"absolute"}
 					bottom={0}
-					boxSize={sizePrimaryImage}
+					boxSize={titlePages === "Login" ? sizePrimaryImage : "lg"}
 					objectFit={"cover"}
 					src={bgPrimary}
 				/>
