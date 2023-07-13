@@ -36,25 +36,33 @@ const Account = ({ collapse }) => {
 			}
 		});
 	};
+
 	return (
 		<Box w={"full"}>
 			<Button
 				leftIcon={!token ? <BiLogInCircle /> : <BiLogOutCircle />}
 				colorScheme="white"
 				variant="unstyled"
-				fontSize={24}
+				fontSize={34}
 				display={"flex"}
+				justifyContent={!collapse ? "start" : "center"}
 				_hover={!token ? { color: "blue.400" } : { color: "red.400" }}
-				pl={collapse ? "4" : ""}
+				pl={collapse ? "3" : "1"}
 				onClick={() => {
 					!token ? navigate("/login") : logout();
 				}}
 			>
-				{!collapse && <Text>{!token ? "Login" : "Logout"}</Text>}
+				{!collapse && <Text fontSize={18}>{!token ? "Login" : "Logout"}</Text>}
 			</Button>
 
-			<Divider py={2} />
-			<Flex w={"full"} py={2} px={1} gap={2} flexDirection={"row"} alignItems={"center"}>
+			<Divider py={1} />
+			<Flex
+				w={"full"}
+				py={2}
+				px={1}
+				flexDirection={"row"}
+				justifyContent={!collapse ? "start" : "center"}
+			>
 				<Avatar name={user?.name || ""} />
 				{!collapse && (
 					<Flex>
