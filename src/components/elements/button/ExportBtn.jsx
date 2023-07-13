@@ -2,7 +2,7 @@ import { Button } from "@chakra-ui/react";
 import React from "react";
 import { AiOutlineUpload } from "react-icons/ai";
 
-const Export = () => {
+const ExportBtn = () => {
 	return (
 		<Button
 			leftIcon={<AiOutlineUpload size={22} />}
@@ -16,4 +16,4 @@ const Export = () => {
 	);
 };
 
-export default Export;
+export default ExportBtn;

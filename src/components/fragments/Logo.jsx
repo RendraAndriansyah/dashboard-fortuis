@@ -4,7 +4,7 @@ import { AiFillAmazonCircle } from "react-icons/ai";
 
 const Logo = ({ collapse }) => {
 	return (
-		<Flex justifyContent={"space-between"} gap={4}>
+		<Flex justifyContent={!collapse ? "space-between" : "center"}>
 			<Box display={"flex"} alignItems={"center"} gap={2}>
 				<Icon as={AiFillAmazonCircle} fontSize={56} />
 				{!collapse && (

@@ -1,7 +1,7 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
 import React from "react";
-import Export from "../components/elements/button/Export";
-import Notification from "../components/elements/button/Notification";
+import Export from "../components/elements/button/ExportBtn";
+import Notification from "../components/elements/button/NotificationBtn";
 import Search from "../components/elements/input/Search";
 import CardStatistic from "../components/fragments/CardStatistic";
 import Content from "../components/layouts/Content";

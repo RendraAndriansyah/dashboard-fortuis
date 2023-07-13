@@ -1,7 +1,7 @@
-import { Box, Flex, Text } from "@chakra-ui/react";
+import { Box, Flex, SimpleGrid, Text } from "@chakra-ui/react";
 import React from "react";
-import Export from "../components/elements/button/Export";
-import Notification from "../components/elements/button/Notification";
+import Export from "../components/elements/button/ExportBtn";
+import Notification from "../components/elements/button/NotificationBtn";
 import Search from "../components/elements/input/Search";
 import CardStatistic from "../components/fragments/CardStatistic";
 import Content from "../components/layouts/Content";
@@ -34,7 +34,7 @@ const Home = () => {
 						</Box>
 						<Export />
 					</Flex>
-					<Flex
+					<SimpleGrid
 						justify={"space-between"}
 						gap={3}
 						pt={5}
@@ -43,7 +43,16 @@ const Home = () => {
 						<CardStatistic />
 						<CardStatistic />
 						<CardStatistic />
-					</Flex>
+						<CardStatistic />
+						<CardStatistic />
+						<CardStatistic />
+						<CardStatistic />
+						<CardStatistic />
+						<CardStatistic />
+						<CardStatistic />
+						<CardStatistic />
+						<CardStatistic />
+					</SimpleGrid>
 				</Content>
 			</MainLayout>
 		</>
