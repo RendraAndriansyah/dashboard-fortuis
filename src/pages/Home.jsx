@@ -1,4 +1,4 @@
-import { Box, Flex, SimpleGrid, Text } from "@chakra-ui/react";
+import { Box, Card, Flex, SimpleGrid, Text } from "@chakra-ui/react";
 import React from "react";
 import Export from "../components/elements/button/ExportBtn";
 import Notification from "../components/elements/button/NotificationBtn";
@@ -34,25 +34,23 @@ const Home = () => {
 						</Box>
 						<Export />
 					</Flex>
-					<SimpleGrid
+					<Flex
 						justify={"space-between"}
 						gap={3}
 						pt={5}
 						flexDirection={{ base: "column", md: "row", lg: "row" }}
 					>
-						<CardStatistic />
-						<CardStatistic />
-						<CardStatistic />
-						<CardStatistic />
-						<CardStatistic />
-						<CardStatistic />
-						<CardStatistic />
-						<CardStatistic />
-						<CardStatistic />
-						<CardStatistic />
-						<CardStatistic />
-						<CardStatistic />
-					</SimpleGrid>
+						<Card boxShadow={"md"} p={5}>
+							<Text fontSize={24} fontWeight={"medium"}>
+								Company Overview
+							</Text>
+							<Box display={"flex"} flexDir={"column"} gap={5}>
+								<CardStatistic />
+								<CardStatistic />
+							</Box>
+							{/* <CardStatistic /> */}
+						</Card>
+					</Flex>
 				</Content>
 			</MainLayout>
 		</>
