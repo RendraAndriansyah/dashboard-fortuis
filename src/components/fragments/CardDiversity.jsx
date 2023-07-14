@@ -8,7 +8,7 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 const CardDiversity = ({ data, plugins }) => {
 	return (
-		<Card boxShadow={"lg"} w={"-moz-fit-content"}>
+		<Card boxShadow={"lg"} w={"3xs"} h={"fit-content"}>
 			<Text fontWeight={"semibold"} textAlign={"center"}>
 				Gender
 			</Text>

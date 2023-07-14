@@ -61,18 +61,22 @@ const Home = () => {
 									/>
 								</Box>
 								<Box w={"50%"}>
-									<Card h={"full"} boxShadow={"md"} p={5}>
-										<CardHeader fontSize={18} fontWeight={"semibold"} px={8}>
+									<Box boxShadow={"md"} p={5} h={"full"}>
+										<Text fontSize={18} fontWeight={"semibold"} px={8}>
 											Divercity
-										</CardHeader>
-										<Flex gap={5} justifyContent={"space-around"}>
+										</Text>
+										<Flex
+											h={"full"}
+											gap={5}
+											justifyContent={"space-around"}
+											alignItems={"center"}
+										>
 											<CardDiversity data={dataGender} plugins={textCenter} />
 											<CardDiversity data={dataGender} plugins={textCenter} />
 										</Flex>
-									</Card>
+									</Box>
 								</Box>
 							</CardBody>
-							{/* <CardStatistic /> */}
 						</Card>
 					</Flex>
 				</Content>
