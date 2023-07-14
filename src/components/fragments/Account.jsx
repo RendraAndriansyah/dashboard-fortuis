@@ -41,9 +41,9 @@ const Account = ({ collapse }) => {
 		<Box w={"full"}>
 			<Button
 				leftIcon={!token ? <BiLogInCircle /> : <BiLogOutCircle />}
-				colorScheme="white"
 				variant="unstyled"
 				fontSize={34}
+				color={"gray.500"}
 				display={"flex"}
 				justifyContent={!collapse ? "start" : "center"}
 				_hover={!token ? { color: "blue.400" } : { color: "red.400" }}

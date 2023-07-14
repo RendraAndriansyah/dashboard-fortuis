@@ -1,4 +1,4 @@
-import { ArrowUpIcon } from "@chakra-ui/icons";
+import { ArrowDownIcon, ArrowUpIcon } from "@chakra-ui/icons";
 import { Box, Card, CardHeader, Flex, Heading, Text } from "@chakra-ui/react";
 import {
 	CategoryScale,
@@ -10,18 +10,18 @@ import {
 } from "chart.js";
 import React from "react";
 import { Line } from "react-chartjs-2";
-import { data, options } from "../../dummyChart";
+import { optionsLine } from "../../dummyChart";
 
 ChartJS.register(LineElement, CategoryScale, LinearScale, Filler, PointElement);
 
-const CardStatistic = () => {
+const CardStatistic = ({ data, title, isUptren }) => {
 	return (
 		<Card w={"-moz-fit-content"}>
-			<Flex>
-				<Box>
+			<Flex gap={2}>
+				<Box w={"full"}>
 					<CardHeader>
 						<Box>
-							<Heading size="sm">Total Employees</Heading>
+							<Heading size="sm">{title}</Heading>
 						</Box>
 					</CardHeader>
 
@@ -31,8 +31,13 @@ const CardStatistic = () => {
 						</Text>
 					</Flex>
 					<Flex p={5}>
-						<ArrowUpIcon boxSize={5} color={"teal.500"} />
+						{isUptren ? (
+							<ArrowUpIcon boxSize={5} color={"teal.500"} />
+						) : (
+							<ArrowDownIcon boxSize={5} color={"red.500"} />
+						)}
 						<Text
+							pl={1}
 							as={"span"}
 							fontWeight={"semibold"}
 							display={"flex"}
@@ -40,12 +45,12 @@ const CardStatistic = () => {
 							color={"gray.500"}
 							fontSize={"small"}
 						>
-							<Text color={"teal.500"}>450</Text> VS Yesterday
+							<Text color={isUptren ? "teal.500" : "red.600"}>450</Text> VS Yesterday
 						</Text>
 					</Flex>
 				</Box>
-				<Box display={"flex"} alignItems={"center"}>
-					<Line width={"200"} height={"100"} data={data} options={options} />
+				<Box display={"flex"} alignItems={"center"} w={"-webkit-fit-content"}>
+					<Line width={"200"} height={"100"} data={data} options={optionsLine} />
 				</Box>
 			</Flex>
 		</Card>

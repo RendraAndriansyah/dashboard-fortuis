@@ -1,4 +1,6 @@
-const data = {
+import { Chart } from "chart.js";
+
+export const dataEmployee = {
 	labels: ["a", "b", "c", "e"],
 	datasets: [
 		{
@@ -13,9 +15,57 @@ const data = {
 	],
 };
 
-const options = {
+export const dataDepartement = {
+	labels: ["a", "b", "c", "e"],
+	datasets: [
+		{
+			data: [4, 1.8, 2.4, 1],
+			backgroundColor: "#e3242b20",
+			borderColor: "#e3242b",
+			pointBorderColor: "transparent",
+			borderWidth: 2,
+			fill: true,
+			tension: 0.4,
+		},
+	],
+};
+
+export const dataGender = {
+	labels: ["Male", "Female"],
+	datasets: [
+		{
+			label: "poll",
+			data: [43, 57],
+			backgroundColor: ["#1153F8", "#FEA3B4"],
+			borderColor: ["#1153F820", "#FEA3B420"],
+		},
+	],
+};
+
+export const textCenter = {
+	id: "textMiddle", // for dataGender
+	beforeDatasetDraw: function (chart) {
+		const xCoor = chart.getDatasetMeta(0).data[0].x;
+		const yCoor = chart.getDatasetMeta(0).data[0].y;
+		let { ctx, data } = chart;
+		ctx.save();
+		ctx.font = "bolder 1em Helvetica";
+		ctx.textBaseline = "middle";
+		ctx.fillStyle = "#1153F8";
+		ctx.textAlign = "center";
+		ctx.fillText(`${data.labels[0]} `, xCoor, yCoor - 12);
+		ctx.restore();
+		ctx.font = "bolder 1em Helvetica";
+		ctx.textBaseline = "middle";
+		ctx.fillStyle = "#C5257D";
+		ctx.textAlign = "center";
+		ctx.fillText(`${data.labels[1]}`, xCoor, yCoor + 12);
+	},
+};
+
+export const optionsLine = {
 	plugins: {
-		legends: false,
+		legend: { display: false },
 	},
 	scales: {
 		x: {
@@ -39,4 +89,18 @@ const options = {
 	maintanceAspectRatio: false,
 };
 
-export { data, options };
+export const optionsDoughnut = {
+	defaultFontFamyly: (Chart.defaults.font.family = "sans-serif"),
+	labels: { display: false },
+	plugins: {
+		legend: { display: false },
+	},
+	cutout: "70%",
+	radius: "90%",
+	rotation: 290,
+	title: {
+		display: true,
+		text: "Custom Chart Title",
+		position: "bottom",
+	},
+};

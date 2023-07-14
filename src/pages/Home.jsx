@@ -1,12 +1,14 @@
-import { Box, Card, Flex, SimpleGrid, Text } from "@chakra-ui/react";
+import { Box, Card, CardBody, CardHeader, Flex, Text } from "@chakra-ui/react";
 import React from "react";
 import Export from "../components/elements/button/ExportBtn";
 import Notification from "../components/elements/button/NotificationBtn";
 import Search from "../components/elements/input/Search";
+import CardDiversity from "../components/fragments/CardDiversity";
 import CardStatistic from "../components/fragments/CardStatistic";
 import Content from "../components/layouts/Content";
 import MainLayout from "../components/layouts/MainLayout";
 import Navigation from "../components/layouts/Navigation";
+import { dataDepartement, dataEmployee, dataGender, textCenter } from "../dummyChart";
 
 const Home = () => {
 	return (
@@ -40,14 +42,36 @@ const Home = () => {
 						pt={5}
 						flexDirection={{ base: "column", md: "row", lg: "row" }}
 					>
-						<Card boxShadow={"md"} p={5}>
-							<Text fontSize={24} fontWeight={"medium"}>
+						<Card boxShadow={"md"} px={3} w={"full"}>
+							<CardHeader fontSize={24} fontWeight={"medium"} pl={1}>
 								Company Overview
-							</Text>
-							<Box display={"flex"} flexDir={"column"} gap={5}>
-								<CardStatistic />
-								<CardStatistic />
-							</Box>
+							</CardHeader>
+
+							<CardBody display={"flex"} gap={8} justifyContent={"space-between"}>
+								<Box display={"flex"} flexDir={"column"} gap={5} w={"40%"}>
+									<CardStatistic
+										data={dataEmployee}
+										title={"Total Employee"}
+										isUptren={true}
+									/>
+									<CardStatistic
+										data={dataDepartement}
+										title={"Total Departement"}
+										isUptren={false}
+									/>
+								</Box>
+								<Box w={"50%"}>
+									<Card h={"full"} boxShadow={"md"} p={5}>
+										<CardHeader fontSize={18} fontWeight={"semibold"} px={8}>
+											Divercity
+										</CardHeader>
+										<Flex gap={5} justifyContent={"space-around"}>
+											<CardDiversity data={dataGender} plugins={textCenter} />
+											<CardDiversity data={dataGender} plugins={textCenter} />
+										</Flex>
+									</Card>
+								</Box>
+							</CardBody>
 							{/* <CardStatistic /> */}
 						</Card>
 					</Flex>
