@@ -2,7 +2,7 @@ import { Card, Text } from "@chakra-ui/react";
 import { ArcElement, Chart as ChartJS, Legend, Tooltip } from "chart.js";
 import React from "react";
 import { Doughnut } from "react-chartjs-2";
-import { optionsDoughnut } from "../../dummyChart";
+import { optionsDoughnut } from "../../../dummyChart";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 

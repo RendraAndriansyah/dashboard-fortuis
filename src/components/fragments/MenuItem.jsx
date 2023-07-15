@@ -7,6 +7,7 @@ export const MenuItem = ({ item, collapse }) => {
 	const { path } = item;
 	const { icon } = item;
 	const isActive = window.location.pathname;
+
 	return (
 		<Box my={6}>
 			<LinkChakra

@@ -1,5 +1,9 @@
 import { Chart } from "chart.js";
 
+// =====================
+// === DATA SETTINGS ===
+// =====================
+
 export const dataEmployee = {
 	labels: ["a", "b", "c", "e"],
 	datasets: [
@@ -54,6 +58,24 @@ export const dataStatus = {
 	],
 };
 
+export const dataAttandance = {
+	labels: ["mo", "tu", "we", "th", "fr", "sa", "su"],
+	datasets: [
+		{
+			label: "attendance",
+			data: [2, 4, 3, 1.5, 5, 3.5, 5],
+			backgroundColor: "#D9D6FE",
+			borderColor: "#D9D6FE20",
+			borderRadius: 10,
+			borderWidth: 5,
+		},
+	],
+};
+
+// ========================
+// === PLUGINS SETTINGS ===
+// ========================
+
 export const textGender = {
 	id: "textGender", // for dataGender
 	beforeDatasetDraw: function (chart) {
@@ -96,6 +118,9 @@ export const textStatus = {
 	},
 };
 
+// =======================
+// === OPTION SETTINGS ===
+// =======================
 export const optionsLine = {
 	plugins: {
 		legend: { display: false },
@@ -135,5 +160,25 @@ export const optionsDoughnut = {
 		display: true,
 		text: "Custom Chart Title",
 		position: "bottom",
+	},
+};
+
+export const optionsAttandance = {
+	plugins: {
+		legend: { display: false },
+	},
+	scales: {
+		x: {
+			display: true,
+			grid: {
+				display: false,
+			},
+		},
+		y: {
+			display: false,
+			grid: {
+				display: false,
+			},
+		},
 	},
 };

@@ -3,7 +3,7 @@ import React from "react";
 import Export from "../components/elements/button/ExportBtn";
 import Notification from "../components/elements/button/NotificationBtn";
 import Search from "../components/elements/input/Search";
-import CardStatistic from "../components/fragments/CardStatistic";
+import ChartLine from "../components/fragments/chart/ChartLine";
 import Content from "../components/layouts/Content";
 import MainLayout from "../components/layouts/MainLayout";
 import Navigation from "../components/layouts/Navigation";
@@ -40,9 +40,9 @@ const Attendance = () => {
 						pt={5}
 						flexDirection={{ base: "column", md: "row", lg: "row" }}
 					>
-						<CardStatistic />
-						<CardStatistic />
-						<CardStatistic />
+						<ChartLine />
+						<ChartLine />
+						<ChartLine />
 					</Flex>
 				</Content>
 			</MainLayout>

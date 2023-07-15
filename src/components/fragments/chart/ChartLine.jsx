@@ -10,7 +10,7 @@ import {
 } from "chart.js";
 import React from "react";
 import { Line } from "react-chartjs-2";
-import { optionsLine } from "../../dummyChart";
+import { optionsLine } from "../../../dummyChart";
 
 ChartJS.register(LineElement, CategoryScale, LinearScale, Filler, PointElement);
 
