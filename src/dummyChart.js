@@ -42,8 +42,20 @@ export const dataGender = {
 	],
 };
 
-export const textCenter = {
-	id: "textMiddle", // for dataGender
+export const dataStatus = {
+	labels: ["Married", "Not Married"],
+	datasets: [
+		{
+			label: "poll",
+			data: [43, 57],
+			backgroundColor: ["#7101FF", "#84CAFF"],
+			borderColor: ["#7101FF20", "#84CAFF20"],
+		},
+	],
+};
+
+export const textGender = {
+	id: "textGender", // for dataGender
 	beforeDatasetDraw: function (chart) {
 		const xCoor = chart.getDatasetMeta(0).data[0].x;
 		const yCoor = chart.getDatasetMeta(0).data[0].y;
@@ -58,6 +70,27 @@ export const textCenter = {
 		ctx.font = "bolder 1em Helvetica";
 		ctx.textBaseline = "middle";
 		ctx.fillStyle = "#C5257D";
+		ctx.textAlign = "center";
+		ctx.fillText(`${data.labels[1]}`, xCoor, yCoor + 12);
+	},
+};
+
+export const textStatus = {
+	id: "textStatus", // for dataStatus
+	beforeDatasetDraw: function (chart) {
+		const xCoor = chart.getDatasetMeta(0).data[0].x;
+		const yCoor = chart.getDatasetMeta(0).data[0].y;
+		let { ctx, data } = chart;
+		ctx.save();
+		ctx.font = "bolder 1em Helvetica";
+		ctx.textBaseline = "middle";
+		ctx.fillStyle = "#7101FF";
+		ctx.textAlign = "center";
+		ctx.fillText(`${data.labels[0]} `, xCoor, yCoor - 12);
+		ctx.restore();
+		ctx.font = "bolder 1em Helvetica";
+		ctx.textBaseline = "middle";
+		ctx.fillStyle = "#84CAFF";
 		ctx.textAlign = "center";
 		ctx.fillText(`${data.labels[1]}`, xCoor, yCoor + 12);
 	},

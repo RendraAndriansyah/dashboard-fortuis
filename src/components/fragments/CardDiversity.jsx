@@ -6,11 +6,11 @@ import { optionsDoughnut } from "../../dummyChart";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const CardDiversity = ({ data, plugins }) => {
+const CardDiversity = ({ data, plugins, title }) => {
 	return (
 		<Card boxShadow={"lg"} w={"3xs"} h={"fit-content"}>
 			<Text fontWeight={"semibold"} textAlign={"center"}>
-				Gender
+				{title}
 			</Text>
 			<Doughnut
 				width={"200"}

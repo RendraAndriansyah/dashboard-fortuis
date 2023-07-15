@@ -8,7 +8,14 @@ import CardStatistic from "../components/fragments/CardStatistic";
 import Content from "../components/layouts/Content";
 import MainLayout from "../components/layouts/MainLayout";
 import Navigation from "../components/layouts/Navigation";
-import { dataDepartement, dataEmployee, dataGender, textCenter } from "../dummyChart";
+import {
+	dataDepartement,
+	dataEmployee,
+	dataGender,
+	dataStatus,
+	textGender,
+	textStatus,
+} from "../dummyChart";
 
 const Home = () => {
 	return (
@@ -71,8 +78,16 @@ const Home = () => {
 											justifyContent={"space-around"}
 											alignItems={"center"}
 										>
-											<CardDiversity data={dataGender} plugins={textCenter} />
-											<CardDiversity data={dataGender} plugins={textCenter} />
+											<CardDiversity
+												title={"Gender"}
+												data={dataGender}
+												plugins={textGender}
+											/>
+											<CardDiversity
+												title={"Status"}
+												data={dataStatus}
+												plugins={textStatus}
+											/>
 										</Flex>
 									</Box>
 								</Box>
