@@ -43,7 +43,7 @@ const ChartBar = ({ data, isUptren, options }) => {
 								display={"flex"}
 								gap={1}
 								color={"gray.500"}
-								fontSize={"sm"}
+								fontSize={"small"}
 							>
 								<Text color={isUptren ? "teal.500" : "red.600"}>450</Text> VS Yesterday
 							</Text>

@@ -1,4 +1,4 @@
-import { Chart } from "chart.js";
+import { Chart, scales } from "chart.js";
 
 // =====================
 // === DATA SETTINGS ===
@@ -72,50 +72,43 @@ export const dataAttandance = {
 	],
 };
 
-// ========================
-// === PLUGINS SETTINGS ===
-// ========================
+export const dataPresence = {
+	labels: ["Presence"],
 
-export const textGender = {
-	id: "textGender", // for dataGender
-	beforeDatasetDraw: function (chart) {
-		const xCoor = chart.getDatasetMeta(0).data[0].x;
-		const yCoor = chart.getDatasetMeta(0).data[0].y;
-		let { ctx, data } = chart;
-		ctx.save();
-		ctx.font = "bolder 1em Helvetica";
-		ctx.textBaseline = "middle";
-		ctx.fillStyle = "#1153F8";
-		ctx.textAlign = "center";
-		ctx.fillText(`${data.labels[0]} `, xCoor, yCoor - 12);
-		ctx.restore();
-		ctx.font = "bolder 1em Helvetica";
-		ctx.textBaseline = "middle";
-		ctx.fillStyle = "#C5257D";
-		ctx.textAlign = "center";
-		ctx.fillText(`${data.labels[1]}`, xCoor, yCoor + 12);
-	},
-};
-
-export const textStatus = {
-	id: "textStatus", // for dataStatus
-	beforeDatasetDraw: function (chart) {
-		const xCoor = chart.getDatasetMeta(0).data[0].x;
-		const yCoor = chart.getDatasetMeta(0).data[0].y;
-		let { ctx, data } = chart;
-		ctx.save();
-		ctx.font = "bolder 1em Helvetica";
-		ctx.textBaseline = "middle";
-		ctx.fillStyle = "#7101FF";
-		ctx.textAlign = "center";
-		ctx.fillText(`${data.labels[0]} `, xCoor, yCoor - 12);
-		ctx.restore();
-		ctx.font = "bolder 1em Helvetica";
-		ctx.textBaseline = "middle";
-		ctx.fillStyle = "#84CAFF";
-		ctx.textAlign = "center";
-		ctx.fillText(`${data.labels[1]}`, xCoor, yCoor + 12);
-	},
+	datasets: [
+		{
+			label: "Present",
+			data: [
+				{
+					x: 1500,
+					y: "Presence",
+				},
+			],
+			backgroundColor: "#0055FF",
+		},
+		{
+			label: "Late",
+			data: [
+				{
+					x: 600,
+					y: "Presence",
+				},
+			],
+			backgroundColor: "#7101FF",
+		},
+		{
+			label: "Absen",
+			data: [
+				{
+					x: 350,
+					y: "Presence",
+				},
+			],
+			backgroundColor: "#F04438",
+			// borderRadius: 100,
+			// borderSkipped: "start",
+		},
+	],
 };
 
 // =======================
@@ -180,5 +173,76 @@ export const optionsAttandance = {
 				display: false,
 			},
 		},
+	},
+};
+
+export const optionsPresence = {
+	plugins: {},
+	indexAxis: "y",
+	barThickness: 20,
+
+	scales: {
+		x: {
+			display: false,
+			stacked: true,
+			grid: {
+				display: false,
+			},
+			max: 2450,
+		},
+		y: {
+			beginAtZero: true,
+			stacked: true,
+			display: false,
+			grid: {
+				display: false,
+			},
+		},
+	},
+};
+
+// ========================
+// === PLUGINS SETTINGS ===
+// ========================
+
+export const textGender = {
+	id: "textGender", // for dataGender
+	beforeDatasetDraw: function (chart) {
+		const xCoor = chart.getDatasetMeta(0).data[0].x;
+		const yCoor = chart.getDatasetMeta(0).data[0].y;
+		let { ctx, data } = chart;
+		ctx.save();
+		ctx.font = "bolder 1em Helvetica";
+		ctx.textBaseline = "middle";
+		ctx.fillStyle = "#1153F8";
+		ctx.textAlign = "center";
+		ctx.fillText(`${data.labels[0]} `, xCoor, yCoor - 12);
+		ctx.restore();
+		ctx.font = "bolder 1em Helvetica";
+		ctx.textBaseline = "middle";
+		ctx.fillStyle = "#C5257D";
+		ctx.textAlign = "center";
+		ctx.fillText(`${data.labels[1]}`, xCoor, yCoor + 12);
+	},
+};
+
+export const textStatus = {
+	id: "textStatus", // for dataStatus
+	beforeDatasetDraw: function (chart) {
+		const xCoor = chart.getDatasetMeta(0).data[0].x;
+		const yCoor = chart.getDatasetMeta(0).data[0].y;
+		let { ctx, data } = chart;
+		ctx.save();
+		ctx.font = "bolder 1em Helvetica";
+		ctx.textBaseline = "middle";
+		ctx.fillStyle = "#7101FF";
+		ctx.textAlign = "center";
+		ctx.fillText(`${data.labels[0]} `, xCoor, yCoor - 12);
+		ctx.restore();
+		ctx.font = "bolder 1em Helvetica";
+		ctx.textBaseline = "middle";
+		ctx.fillStyle = "#84CAFF";
+		ctx.textAlign = "center";
+		ctx.fillText(`${data.labels[1]}`, xCoor, yCoor + 12);
 	},
 };

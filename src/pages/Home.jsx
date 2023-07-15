@@ -19,17 +19,20 @@ import ChartLine from "../components/fragments/chart/ChartLine";
 import Content from "../components/layouts/Content";
 import MainLayout from "../components/layouts/MainLayout";
 import Navigation from "../components/layouts/Navigation";
+import ChartBar from "../components/fragments/chart/ChartBar";
+import ChartSingleBar from "../components/fragments/chart/ChartSingleBar";
 import {
 	dataAttandance,
 	dataDepartement,
 	dataEmployee,
 	dataGender,
+	dataPresence,
 	dataStatus,
 	optionsAttandance,
+	optionsPresence,
 	textGender,
 	textStatus,
 } from "../dummyChart";
-import ChartBar from "../components/fragments/chart/ChartBar";
 
 const Home = () => {
 	return (
@@ -126,11 +129,7 @@ const Home = () => {
 										title={"Total Employee"}
 										isUptren={true}
 									/>
-									<ChartBar
-										data={dataDepartement}
-										title={"Total Departement"}
-										isUptren={false}
-									/>
+									<ChartSingleBar data={dataPresence} options={optionsPresence} />
 								</Box>
 								<Divider
 									orientation="vertical"
