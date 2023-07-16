@@ -85,6 +85,11 @@ export const dataPresence = {
 				},
 			],
 			backgroundColor: "#0055FF",
+			borderRadius: {
+				topLeft: 20,
+				bottomLeft: 20,
+			},
+			borderSkipped: false,
 		},
 		{
 			label: "Late",
@@ -105,8 +110,7 @@ export const dataPresence = {
 				},
 			],
 			backgroundColor: "#F04438",
-			// borderRadius: 100,
-			// borderSkipped: "start",
+			borderRadius: 10,
 		},
 	],
 };
@@ -177,7 +181,18 @@ export const optionsAttandance = {
 };
 
 export const optionsPresence = {
-	plugins: {},
+	plugins: {
+		legend: {
+			align: "center",
+			labels: {
+				font: {
+					weight: "bold",
+					size: 14,
+				},
+			},
+			onClick: false,
+		},
+	},
 	indexAxis: "y",
 	barThickness: 20,
 
@@ -246,3 +261,7 @@ export const textStatus = {
 		ctx.fillText(`${data.labels[1]}`, xCoor, yCoor + 12);
 	},
 };
+
+// ================
+// === PRESENCE ===
+// ================
