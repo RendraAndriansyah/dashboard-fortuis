@@ -73,9 +73,7 @@ const ChartSingleBar = ({ data, options }) => {
 					</Text>
 				</Box>
 			</Flex>
-			<Flex flexDir={"column"} justifyContent={"space-between"} gap={1}>
-				<Bar data={data} options={options} height={30} />
-			</Flex>
+			<Bar data={data} options={options} height={30} />
 		</Box>
 	);
 };
