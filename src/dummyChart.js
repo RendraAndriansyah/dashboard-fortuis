@@ -1,4 +1,4 @@
-import { Chart, scales } from "chart.js";
+import { Chart } from "chart.js";
 
 // =====================
 // === DATA SETTINGS ===
@@ -86,8 +86,8 @@ export const dataPresence = {
 			],
 			backgroundColor: "#0055FF",
 			borderRadius: {
-				topLeft: 20,
-				bottomLeft: 20,
+				topLeft: 50,
+				bottomLeft: 50,
 			},
 			borderSkipped: false,
 		},
@@ -183,14 +183,7 @@ export const optionsAttandance = {
 export const optionsPresence = {
 	plugins: {
 		legend: {
-			align: "center",
-			labels: {
-				font: {
-					weight: "bold",
-					size: 14,
-				},
-			},
-			onClick: false,
+			display: false,
 		},
 	},
 	indexAxis: "y",
@@ -206,7 +199,6 @@ export const optionsPresence = {
 			max: 2450,
 		},
 		y: {
-			beginAtZero: true,
 			stacked: true,
 			display: false,
 			grid: {
