@@ -9,9 +9,7 @@ const ListAttandance = (props) => {
 	const [colorStatus, SetColorStatus] = useState({ color: null, bg: null });
 
 	useEffect(() => {
-		return () => {
-			changeColorStatus(status, SetColorStatus);
-		};
+		changeColorStatus(status, SetColorStatus);
 	}, []);
 
 	return (
