@@ -115,6 +115,79 @@ export const dataPresence = {
 	],
 };
 
+export const dataVisitedArea = {
+	labels: ["Visited Area"],
+
+	datasets: [
+		{
+			label: "Kebayoran",
+			data: [
+				{
+					x: 250,
+					y: "Visited Area",
+				},
+			],
+			backgroundColor: "#FEC84B",
+			borderRadius: {
+				topLeft: 50,
+				bottomLeft: 50,
+			},
+			borderSkipped: false,
+		},
+		{
+			label: "Kelurahan",
+			data: [
+				{
+					x: 150,
+					y: "Visited Area",
+				},
+			],
+			backgroundColor: "#0055FF",
+		},
+		{
+			label: "Margahayu",
+			data: [
+				{
+					x: 200,
+					y: "Visited Area",
+				},
+			],
+			backgroundColor: "#12B76A",
+		},
+		{
+			label: "Sawangan Lama",
+			data: [
+				{
+					x: 150,
+					y: "Visited Area",
+				},
+			],
+			backgroundColor: "#DC6803",
+		},
+		{
+			label: "Cakung",
+			data: [
+				{
+					x: 100,
+					y: "Visited Area",
+				},
+			],
+			backgroundColor: "#7101FF",
+		},
+		{
+			label: "Others",
+			data: [
+				{
+					x: 150,
+					y: "Visited Area",
+				},
+			],
+			backgroundColor: "#EAECF5",
+			borderRadius: 20,
+		},
+	],
+};
+
 // =======================
 // === OPTION SETTINGS ===
 // =======================
@@ -187,7 +260,7 @@ export const optionsPresence = {
 		},
 	},
 	indexAxis: "y",
-	barThickness: 20,
+	barThickness: 12,
 
 	scales: {
 		x: {
@@ -197,6 +270,39 @@ export const optionsPresence = {
 				display: false,
 			},
 			max: 2450,
+		},
+		y: {
+			stacked: true,
+			display: false,
+			grid: {
+				display: false,
+			},
+		},
+	},
+};
+
+export const optionsVisitedArea = {
+	plugins: {
+		legend: {
+			display: false,
+			position: "bottom",
+			align: "start",
+			labels: {
+				boxWidth: 12,
+			},
+		},
+	},
+	indexAxis: "y",
+	barThickness: 20,
+
+	scales: {
+		x: {
+			display: false,
+			stacked: true,
+			grid: {
+				display: false,
+			},
+			max: 1000,
 		},
 		y: {
 			stacked: true,
