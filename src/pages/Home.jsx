@@ -27,6 +27,8 @@ import {
 	dataDepartement,
 	dataEmployee,
 	dataGender,
+	dataLeaveReport,
+	dataLeaveTypeTaken,
 	dataPresence,
 	dataStatus,
 	dataVisitedArea,
@@ -113,7 +115,7 @@ const Home = () => {
 										title={"Total Employee"}
 										isUptren={true}
 									/>
-									<SingleBarLayout>
+									<SingleBarLayout data={dataPresence}>
 										<ChartSingleBar data={dataPresence} options={optionsPresence} />
 									</SingleBarLayout>
 								</Box>
@@ -209,13 +211,13 @@ const Home = () => {
 							<CardBody display={"flex"} justifyContent={"space-between"}>
 								<Box display={"flex"} flexDir={"column"} gap={5} w={"45%"}>
 									<ChartBar
-										data={dataAttandance}
+										data={dataLeaveReport}
 										options={optionsAttandance}
 										title={"Total Employee"}
 										isUptren={true}
 									/>
-									<SingleBarLayout>
-										<ChartSingleBar data={dataPresence} options={optionsPresence} />
+									<SingleBarLayout data={dataLeaveTypeTaken}>
+										<ChartSingleBar data={dataLeaveTypeTaken} options={optionsPresence} />
 									</SingleBarLayout>
 								</Box>
 								<Divider

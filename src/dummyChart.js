@@ -1,4 +1,13 @@
 import { Chart } from "chart.js";
+import { CheckIcon, NotAllowedIcon, CloseIcon } from "@chakra-ui/icons";
+import {
+	AiOutlineClose,
+	AiOutlineCheck,
+	AiOutlineStop,
+	AiOutlineCalendar,
+	AiOutlineFrown,
+	AiOutlineAppstore,
+} from "react-icons/ai";
 
 // =====================
 // === DATA SETTINGS ===
@@ -84,6 +93,7 @@ export const dataPresence = {
 					y: "Presence",
 				},
 			],
+			icon: AiOutlineCheck,
 			backgroundColor: "#0055FF",
 			borderRadius: {
 				topLeft: 50,
@@ -99,17 +109,83 @@ export const dataPresence = {
 					y: "Presence",
 				},
 			],
+			icon: AiOutlineClose,
+
 			backgroundColor: "#7101FF",
 		},
 		{
-			label: "Absen",
+			label: "Absent",
 			data: [
 				{
 					x: 350,
 					y: "Presence",
 				},
 			],
+			icon: AiOutlineStop,
+
 			backgroundColor: "#F04438",
+			borderRadius: 10,
+		},
+	],
+};
+
+export const dataLeaveReport = {
+	labels: ["mo", "tu", "we", "th", "fr", "sa", "su"],
+	datasets: [
+		{
+			label: "attendance",
+			data: [2, 4, 3, 1.5, 5, 3.5, 5],
+			backgroundColor: "#C7D7FE",
+			borderColor: "#C7D7FE20",
+			borderRadius: 10,
+			borderWidth: 5,
+		},
+	],
+};
+
+export const dataLeaveTypeTaken = {
+	labels: ["Leave type taken"],
+
+	datasets: [
+		{
+			label: "Annual",
+			data: [
+				{
+					x: 1500,
+					y: "Leave type taken",
+				},
+			],
+			icon: AiOutlineCalendar,
+			backgroundColor: "#0055FF",
+			borderRadius: {
+				topLeft: 50,
+				bottomLeft: 50,
+			},
+			borderSkipped: false,
+		},
+		{
+			label: "Medical",
+			data: [
+				{
+					x: 600,
+					y: "Leave type taken",
+				},
+			],
+			icon: AiOutlineFrown,
+
+			backgroundColor: "#7101FF",
+		},
+		{
+			label: "Other",
+			data: [
+				{
+					x: 350,
+					y: "Leave type taken",
+				},
+			],
+			icon: AiOutlineAppstore,
+
+			backgroundColor: "#F79719",
 			borderRadius: 10,
 		},
 	],
@@ -235,11 +311,19 @@ export const optionsDoughnut = {
 
 export const optionsAttandance = {
 	plugins: {
-		legend: { display: false },
+		legend: {
+			display: false,
+		},
 	},
 	scales: {
 		x: {
 			display: true,
+			ticks: {
+				font: {
+					size: 16,
+				},
+			},
+
 			grid: {
 				display: false,
 			},

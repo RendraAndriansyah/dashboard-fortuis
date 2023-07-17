@@ -1,5 +1,5 @@
-import { CheckIcon, CloseIcon, NotAllowedIcon } from "@chakra-ui/icons";
-import { Box, Flex, HStack, Text } from "@chakra-ui/react";
+import { CheckIcon, CloseIcon, Icon, NotAllowedIcon } from "@chakra-ui/icons";
+import { Box, Flex, HStack, Text, Center } from "@chakra-ui/react";
 
 import {
 	BarElement,
@@ -13,7 +13,7 @@ import React from "react";
 
 ChartJS.register(BarElement, CategoryScale, LinearScale, Legend, Tooltip);
 
-const SingleBarLayout = ({ children }) => {
+const SingleBarLayout = ({ children, data }) => {
 	return (
 		<Box
 			display={"flex"}
@@ -26,23 +26,30 @@ const SingleBarLayout = ({ children }) => {
 			gap={5}
 		>
 			<Flex justifyContent={"space-between"}>
-				<Box display={"flex"} flexDir={"column"} gap={10} mb={"-8"}>
-					<HStack alignItems={"center"}>
-						<Box bg={"blue.100"} px={1.5} py={0.5} rounded={"md"}>
-							<CheckIcon color={"blue.500"} />
+				{data?.datasets.map((data, i) => {
+					return (
+						<Box key={i} display={"flex"} flexDir={"column"} gap={10} mb={"-8"}>
+							<HStack alignItems={"center"}>
+								<Box bg={data.backgroundColor + "25"} p={1} rounded={"md"}>
+									<Center>
+										<Icon as={data.icon} boxSize={6} color={data.backgroundColor} />
+									</Center>
+								</Box>
+								<Text fontWeight={"medium"} color={"blackAlpha.700"}>
+									{data.label}
+								</Text>
+							</HStack>
+							<Text fontSize={"3xl"} fontWeight={"semibold"} color={"blackAlpha.700"}>
+								{data.data[0].x}
+							</Text>
 						</Box>
-						<Text fontWeight={"medium"} color={"blackAlpha.700"}>
-							Present
-						</Text>
-					</HStack>
-					<Text fontSize={"3xl"} fontWeight={"semibold"} color={"blackAlpha.700"}>
-						1,500
-					</Text>
-				</Box>
-				<Box display={"flex"} flexDir={"column"} gap={10} mb={"-8"}>
+					);
+				})}
+
+				{/* <Box display={"flex"} flexDir={"column"} gap={10} mb={"-8"}>
 					<HStack alignItems={"center"}>
 						<Box bg={"purple.100"} px={1.5} py={0.5} rounded={"md"}>
-							<CloseIcon color={"purple.500"} />
+							<Icon as={CloseIcon} color={"purple.500"} />
 						</Box>
 						<Text fontWeight={"medium"} color={"blackAlpha.700"}>
 							Late
@@ -55,16 +62,16 @@ const SingleBarLayout = ({ children }) => {
 				<Box display={"flex"} flexDir={"column"} gap={10} mb={"-8"}>
 					<HStack alignItems={"center"}>
 						<Box bg={"red.100"} px={1.5} py={0.5} rounded={"md"}>
-							<NotAllowedIcon boxSize={6} color={"red.500"} />
+							<Icon as={NotAllowedIcon} boxSize={6} color={"red.500"} />
 						</Box>
 						<Text fontWeight={"medium"} color={"blackAlpha.700"}>
-							Present
+							Absent
 						</Text>
 					</HStack>
 					<Text fontSize={"3xl"} fontWeight={"semibold"} color={"blackAlpha.700"}>
 						350
 					</Text>
-				</Box>
+				</Box> */}
 			</Flex>
 			{children}
 		</Box>
