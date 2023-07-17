@@ -11,18 +11,9 @@ import {
 	Text,
 } from "@chakra-ui/react";
 import React from "react";
-import {
-	BiCalendarAlt,
-	BiCalendarCheck,
-	BiCalendarEvent,
-	BiCalendarExclamation,
-	BiCalendarHeart,
-	BiCalendarWeek,
-	BiCalendarX,
-} from "react-icons/bi";
-import Export from "../components/elements/button/ExportBtn";
-import Notification from "../components/elements/button/NotificationBtn";
-import Search from "../components/elements/input/Search";
+import { BiCalendarCheck, BiCalendarWeek } from "react-icons/bi";
+import { Link } from "react-router-dom";
+import HeaderContent from "../components/fragments/HeaderContent";
 import ChartBar from "../components/fragments/chart/ChartBar";
 import ChartDoughnut from "../components/fragments/chart/ChartDoughnut";
 import ChartLine from "../components/fragments/chart/ChartLine";
@@ -45,7 +36,6 @@ import {
 	textGender,
 	textStatus,
 } from "../dummyChart";
-import { Link } from "react-router-dom";
 
 const Home = () => {
 	return (
@@ -53,31 +43,12 @@ const Home = () => {
 			<MainLayout>
 				<Navigation />
 				<Content>
-					<Flex justify={"space-between"} h={10}>
-						<Text color={"blue.500"} fontSize={"xl"} fontWeight={"bold"}>
-							COMPANY NAME
-						</Text>
-						<Box display={"flex"} gap={4}>
-							<Notification />
-							<Search />
-						</Box>
-					</Flex>
-					<Flex pt={4} justify={"space-between"}>
-						<Box>
-							<Text as={"h3"} fontSize={"3xl"} color={"gray.700"} fontWeight={"semibold"}>
-								Welcome back, John
-							</Text>
-							<Text as={"p"} color={"gray.500"}>
-								You're Working at ABC Company
-							</Text>
-						</Box>
-						<Export />
-					</Flex>
+					<HeaderContent />
 					<Flex
 						justify={"space-between"}
 						pt={5}
 						gap={10}
-						flexDirection={{ base: "column", md: "row", lg: "column" }}
+						flexDirection={{ base: "row", md: "row", lg: "column" }}
 					>
 						{/* COMPANY OVERVIEW */}
 						<Card boxShadow={"md"} px={3} w={"full"}>
@@ -254,77 +225,7 @@ const Home = () => {
 									borderColor={"gray.300"}
 									rounded={"3xl"}
 								/>
-								<Box w={"50%"}>
-									<Box p={5} h={"full"}>
-										<Flex
-											justifyContent={"space-between"}
-											fontWeight={"medium"}
-											color={"gray.500"}
-										>
-											<Box>
-												<Text fontSize={"2xl"}>All User Statistic</Text>
-												<Text fontSize={"3xl"} color={"blackAlpha.700"}>
-													25,256
-													<Text as={"span"} fontSize={"xl"} pl={1} color={"gray.600"}>
-														Users
-													</Text>
-												</Text>
-											</Box>
-											<Box>
-												<Text fontSize={"2xl"}>Average Visit Times</Text>
-												<Text fontSize={"3xl"} color={"blackAlpha.700"}>
-													2
-													<Text as={"span"} fontSize={"xl"} pl={1} color={"gray.600"}>
-														Hours
-													</Text>
-													<Text as={"span"} fontSize={"3xl"} pl={1}>
-														35
-													</Text>
-													<Text as={"span"} fontSize={"xl"} pl={1} color={"gray.600"}>
-														Minutes
-													</Text>
-												</Text>
-											</Box>
-										</Flex>
-										<Box pt={10}>
-											<Text fontSize={"2xl"} color={"GrayText"} fontWeight={"medium"}>
-												Top Visited Area
-											</Text>
-											<ChartSingleBar
-												data={dataVisitedArea}
-												options={optionsVisitedArea}
-											/>
-											<Grid
-												gridTemplateColumns={"auto"}
-												gridTemplateRows={"repeat(3,2.5em)"}
-												gridAutoFlow={"column"}
-												// pt={2}
-											>
-												{dataVisitedArea.datasets.map((data, i) => {
-													return (
-														<Box key={i}>
-															<Flex gap={2} alignItems={"center"}>
-																<Box w={4} h={4} bg={data.backgroundColor}></Box>
-																<Box>{data.label}</Box>
-															</Flex>
-														</Box>
-													);
-												})}
-											</Grid>
-											<Flex justifyContent={"end"}>
-												<Text
-													color={"blue.500"}
-													_hover={{ color: "blue.400" }}
-													fontWeight={"medium"}
-												>
-													<Link to={"/attandance"} color="red.200">
-														Go to Attandance
-													</Link>
-												</Text>
-											</Flex>
-										</Box>
-									</Box>
-								</Box>
+								<Box w={"50%"}></Box>
 							</CardBody>
 						</Card>
 					</Flex>
