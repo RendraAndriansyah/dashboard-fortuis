@@ -27,7 +27,7 @@ const CardStatistic = ({ data, title, isUptren }) => {
 
 					<Flex justifyContent={"space-between"} gap={10}>
 						<Text textAlign={"center"} fontSize={"4xl"} fontWeight={"semibold"} px={5}>
-							2,420
+							{data.datasets[0].fakeTotal}
 						</Text>
 					</Flex>
 					<Flex p={5}>
@@ -49,8 +49,8 @@ const CardStatistic = ({ data, title, isUptren }) => {
 						</Text>
 					</Flex>
 				</Box>
-				<Box display={"flex"} alignItems={"center"} w={"-webkit-fit-content"}>
-					<Line width={"200"} height={"100"} data={data} options={optionsLine} />
+				<Box display={"flex"} alignItems={"center"} w={"-moz-fit-content"}>
+					<Line data={data} width={200} height={100} options={optionsLine} />
 				</Box>
 			</Flex>
 		</Card>

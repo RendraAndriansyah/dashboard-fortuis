@@ -14,7 +14,8 @@ import {
 import React from "react";
 
 import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons";
-import TableListUser from "./TableListUser";
+import listLeaveReport from "./TableListUser";
+import ListLeaveReport from "./TableListUser";
 
 const customScroll = {
 	"&::-webkit-scrollbar": {
@@ -52,15 +53,15 @@ const TableLeaveReport = () => {
 						</Tr>
 					</Thead>
 					<Tbody fontSize={"md"}>
-						<TableListUser />
-						<TableListUser />
-						<TableListUser />
-						<TableListUser />
-						<TableListUser />
-						<TableListUser />
-						<TableListUser />
-						<TableListUser />
-						<TableListUser />
+						<ListLeaveReport />
+						<ListLeaveReport />
+						<ListLeaveReport />
+						<ListLeaveReport />
+						<ListLeaveReport />
+						<ListLeaveReport />
+						<ListLeaveReport />
+						<ListLeaveReport />
+						<ListLeaveReport />
 					</Tbody>
 				</Table>
 			</TableContainer>

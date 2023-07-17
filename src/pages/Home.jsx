@@ -189,7 +189,7 @@ const Home = () => {
 													_hover={{ color: "blue.400" }}
 													fontWeight={"medium"}
 												>
-													<Link to={"/attandance"} color="red.200">
+													<Link to={"/attendance"} color="red.200">
 														Go to Attandance
 													</Link>
 												</Text>
@@ -208,7 +208,6 @@ const Home = () => {
 									<Text>Leave Report</Text>
 								</HStack>
 							</CardHeader>
-
 							<CardBody display={"flex"} justifyContent={"space-between"}>
 								<Box display={"flex"} flexDir={"column"} gap={5} w={"45%"}>
 									<ChartBar
@@ -230,6 +229,17 @@ const Home = () => {
 								/>
 								<Box w={"50%"}>
 									<TableLeaveReport />
+									<Flex justifyContent={"end"}>
+										<Text
+											color={"blue.500"}
+											_hover={{ color: "blue.400" }}
+											fontWeight={"medium"}
+										>
+											<Link to={"/"} color="red.200">
+												Go to leave
+											</Link>
+										</Text>
+									</Flex>
 								</Box>
 							</CardBody>
 						</Card>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Tr, Td, Flex, Avatar, Box, Text } from "@chakra-ui/react";
-const TableListUser = () => {
+const ListLeaveReport = () => {
 	return (
 		<Tr>
 			<Td>
@@ -20,4 +20,4 @@ const TableListUser = () => {
 	);
 };
 
-export default TableListUser;
+export default ListLeaveReport;

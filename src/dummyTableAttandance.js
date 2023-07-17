@@ -1,0 +1,58 @@
+const data = [
+	{
+		id: 1,
+		name: "Rendra",
+		checkInTime: "09:00",
+		checkInLocation: "Singapore",
+		checkOutTime: "17:30",
+		checkOutLocation: "Singapore",
+		status: "Early Checkin",
+	},
+	{
+		id: 2,
+		name: "Rendra",
+		checkInTime: "09:00",
+		checkInLocation: "Singapore",
+		checkOutTime: "17:30",
+		checkOutLocation: "Singapore",
+		status: "On Time",
+	},
+	{
+		id: 3,
+		name: "Rendra",
+		checkInTime: "09:00",
+		checkInLocation: "Singapore",
+		checkOutTime: "17:30",
+		checkOutLocation: "Singapore",
+		status: "Absent",
+	},
+	{
+		id: 4,
+		name: "Rendra",
+		checkInTime: "09:00",
+		checkInLocation: "Singapore",
+		checkOutTime: "17:30",
+		checkOutLocation: "Singapore",
+		status: "Late Checkin",
+	},
+	{
+		id: 5,
+		name: "Rendra",
+		checkInTime: "09:00",
+		checkInLocation: "Singapore",
+		checkOutTime: "17:30",
+		checkOutLocation: "Singapore",
+		status: "Early Checkout",
+	},
+	{
+		id: 6,
+		name: "Rendra",
+		checkInTime: "09:00",
+		checkInLocation: "Singapore",
+		checkOutTime: "17:30",
+		checkOutLocation: "Singapore",
+		status: "Late Checkout",
+	},
+];
+
+export default data;

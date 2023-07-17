@@ -24,6 +24,7 @@ export const dataEmployee = {
 			borderWidth: 2,
 			fill: true,
 			tension: 0.4,
+			fakeTotal: 2420,
 		},
 	],
 };
@@ -39,6 +40,7 @@ export const dataDepartement = {
 			borderWidth: 2,
 			fill: true,
 			tension: 0.4,
+			fakeTotal: 100,
 		},
 	],
 };
@@ -260,6 +262,54 @@ export const dataVisitedArea = {
 			],
 			backgroundColor: "#EAECF5",
 			borderRadius: 20,
+		},
+	],
+};
+
+export const dataPresentEmployee = {
+	labels: ["a", "b", "c", "e"],
+	datasets: [
+		{
+			data: [1, 2.4, 1.8, 4],
+			backgroundColor: "#22b97f20",
+			borderColor: "#22b97f",
+			pointBorderColor: "transparent",
+			borderWidth: 2,
+			fill: true,
+			tension: 0.4,
+			fakeTotal: 2420,
+		},
+	],
+};
+
+export const dataLateEmployee = {
+	labels: ["a", "b", "c", "e"],
+	datasets: [
+		{
+			data: [4, 1.8, 2.4, 1],
+			backgroundColor: "#e3242b20",
+			borderColor: "#e3242b",
+			pointBorderColor: "transparent",
+			borderWidth: 2,
+			fill: true,
+			tension: 0.4,
+			fakeTotal: 200,
+		},
+	],
+};
+
+export const dataEmployeeOnLeaves = {
+	labels: ["a", "b", "c", "e"],
+	datasets: [
+		{
+			data: [1, 2.4, 1.8, 4],
+			backgroundColor: "#22b97f20",
+			borderColor: "#22b97f",
+			pointBorderColor: "transparent",
+			borderWidth: 2,
+			fill: true,
+			tension: 0.4,
+			fakeTotal: 316,
 		},
 	],
 };
