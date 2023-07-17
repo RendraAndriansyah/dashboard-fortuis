@@ -1,4 +1,6 @@
 import {
+	Box,
+	Button,
 	Card,
 	Flex,
 	Table,
@@ -7,8 +9,13 @@ import {
 	Th,
 	Thead,
 	Tr,
+	Center,
+	Text,
+	IconButton,
 } from "@chakra-ui/react";
 import React from "react";
+import { BsFilter } from "react-icons/bs";
+import DateAttandanceBtn from "../components/elements/button/DateAttandanceBtn";
 import HeaderContent from "../components/fragments/HeaderContent";
 import ListAttandance from "../components/fragments/ListAttandance";
 import ChartLine from "../components/fragments/chart/ChartLine";
@@ -20,6 +27,8 @@ import {
 	dataLateEmployee,
 	dataPresentEmployee,
 } from "../dummyChart";
+
+import { HiOutlineChevronUpDown } from "react-icons/hi2";
 import data from "../dummyTableAttandance";
 const Attendance = () => {
 	return (
@@ -46,7 +55,15 @@ const Attendance = () => {
 							isUptren={true}
 						/>
 					</Flex>
-					<Card p={6}>
+					<Card p={6} mt={8}>
+						<Center pb={5}>
+							<DateAttandanceBtn />
+							<Box position={"absolute"} top={5} right={6}>
+								<Button leftIcon={<BsFilter size={24} />} variant={"outline"}>
+									More Filter
+								</Button>
+							</Box>
+						</Center>
 						<TableContainer border={"1px"} rounded={"lg"} borderColor={"gray.400"}>
 							<Table>
 								<Thead bg={"blue.50"}>
@@ -57,7 +74,13 @@ const Attendance = () => {
 											borderRight={"1px"}
 											borderColor={"gray.400"}
 										>
-											Employee Name
+											<Flex alignItems={"center"} justifyContent={"space-between"}>
+												Employee Name
+												<IconButton
+													icon={<HiOutlineChevronUpDown size={24} />}
+													variant={"unstyled"}
+												></IconButton>
+											</Flex>
 										</Th>
 										<Th
 											textAlign={"center"}
@@ -91,7 +114,13 @@ const Attendance = () => {
 											borderBottom={"1px"}
 											borderColor={"gray.400"}
 										>
-											Action
+											<Flex alignItems={"center"} justifyContent={"space-between"}>
+												Action
+												<IconButton
+													icon={<HiOutlineChevronUpDown size={24} />}
+													variant={"unstyled"}
+												></IconButton>
+											</Flex>
 										</Th>
 									</Tr>
 									<Tr>
@@ -126,6 +155,13 @@ const Attendance = () => {
 								</Tbody>
 							</Table>
 						</TableContainer>
+						<Flex pt={3} justifyContent={"space-between"}>
+							<Box display={"flex"} gap={2}>
+								<Button variant={"outline"}>Previous</Button>
+								<Button variant={"outline"}>Next</Button>
+							</Box>
+							<Text fontWeight={"medium"}>Page 1 of 10</Text>
+						</Flex>
 					</Card>
 				</Content>
 			</MainLayout>

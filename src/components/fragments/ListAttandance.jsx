@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Tr, Td, Button, Text } from "@chakra-ui/react";
+import { Tr, Td, Button, Text, IconButton, Flex } from "@chakra-ui/react";
 import { BiMap } from "react-icons/bi";
 import changeColorStatus from "../../services/utils/changeColorStatus";
+import { HiOutlineChevronDown } from "react-icons/hi2";
 const ListAttandance = (props) => {
 	const { name, checkinTime, checkinLocation, checkoutTime, checkoutLocation, status } =
 		props;
@@ -56,19 +57,26 @@ const ListAttandance = (props) => {
 					checkoutLocation
 				)}
 			</Td>
-			<Td borderLeft={"1px"} borderColor={"gray.400"} color={colorStatus.color}>
+			<Td borderLeft={"1px"} borderColor={"gray.400"} color={colorStatus.color} px={2}>
 				<Text
 					bg={colorStatus.bg}
 					textAlign={"center"}
 					fontWeight={"medium"}
 					rounded={"full"}
 					py={1}
+					px={0}
 				>
 					{status}
 				</Text>
 			</Td>
-			<Td borderLeft={"1px"} borderColor={"gray.400"}>
-				Details
+			<Td borderLeft={"1px"} borderColor={"gray.400"} pr={3} pb={1}>
+				<Flex alignItems={"center"} justifyContent={"space-between"}>
+					<Text color={"blue.400"}>Details</Text>
+					<IconButton
+						icon={<HiOutlineChevronDown size={20} />}
+						variant={"unstyled"}
+					></IconButton>
+				</Flex>
 			</Td>
 		</Tr>
 	);

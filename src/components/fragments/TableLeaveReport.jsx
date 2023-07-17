@@ -16,6 +16,7 @@ import React from "react";
 import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons";
 import listLeaveReport from "./TableListUser";
 import ListLeaveReport from "./TableListUser";
+import DateAttandanceBtn from "../elements/button/DateAttandanceBtn";
 
 const customScroll = {
 	"&::-webkit-scrollbar": {
@@ -34,14 +35,7 @@ const TableLeaveReport = () => {
 	return (
 		<>
 			<Center pb={3}>
-				<ButtonGroup size="sm" variant="solid" alignItems={"center"}>
-					<IconButton
-						rounded={"full"}
-						icon={<ArrowBackIcon boxSize={6} rounded={"full"} />}
-					/>
-					<Text fontWeight={"medium"}>Tue, 16 August 23</Text>
-					<IconButton rounded={"full"} icon={<ArrowForwardIcon boxSize={6} />} />
-				</ButtonGroup>
+				<DateAttandanceBtn />
 			</Center>
 			<TableContainer maxH={"35vh"} overflowY={"auto"} css={customScroll}>
 				<Table height={20}>
