@@ -38,6 +38,7 @@ import {
 	textGender,
 	textStatus,
 } from "../dummyChart";
+import TableLeaveReport from "../components/fragments/TableLeaveReport";
 
 const Home = () => {
 	return (
@@ -227,7 +228,9 @@ const Home = () => {
 									borderColor={"gray.300"}
 									rounded={"3xl"}
 								/>
-								<Box w={"50%"}></Box>
+								<Box w={"50%"}>
+									<TableLeaveReport />
+								</Box>
 							</CardBody>
 						</Card>
 					</Flex>
