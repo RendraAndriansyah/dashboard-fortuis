@@ -28,5 +28,8 @@ npm run dev
 ### Home
 ![Homepage-fortuis](https://github.com/RendraAndriansyah/dashboard-fortuis/assets/112911127/e87c087b-650b-4d8c-bc52-06c917dcc5a6)
 
+### Attendance
+![screencapture-localhost-5173-attendance-2023-07-17-23_36_54](https://github.com/RendraAndriansyah/dashboard-fortuis/assets/112911127/3fd20d3e-1fa6-47dd-b7bd-4bd1da75b003)
+
 
 # 🚨🚨🚨 Still on development
