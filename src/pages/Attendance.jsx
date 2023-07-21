@@ -22,14 +22,15 @@ import ChartLine from "../components/fragments/chart/ChartLine";
 import Content from "../components/layouts/Content";
 import MainLayout from "../components/layouts/MainLayout";
 import Navigation from "../components/layouts/Navigation";
+import ExportBtn from "../components/elements/button/ExportBtn";
 import {
 	dataEmployeeOnLeaves,
 	dataLateEmployee,
 	dataPresentEmployee,
-} from "../dummyChart";
+} from "../services/dummyChart";
 
 import { HiOutlineChevronUpDown } from "react-icons/hi2";
-import data from "../dummyTableAttandance";
+import data from "../services/dummyTableAttandance";
 const Attendance = () => {
 	return (
 		<>
@@ -37,6 +38,16 @@ const Attendance = () => {
 				<Navigation />
 				<Content>
 					<HeaderContent />
+					<Flex pt={4} justify={"space-between"}>
+						<Box>
+							<Text as={"h3"} fontSize={"3xl"} color={"gray.700"} fontWeight={"semibold"}>
+								Welcome back, John
+							</Text>
+							<Text as={"p"} color={"gray.500"}>
+								You're Working at ABC Company
+							</Text>
+						</Box>
+					</Flex>
 					<Flex
 						justify={"space-between"}
 						gap={3}
@@ -55,10 +66,10 @@ const Attendance = () => {
 							isUptren={true}
 						/>
 					</Flex>
-					<Card p={6} mt={8}>
+					<Card px={6} py={4} mt={0}>
 						<Center pb={5}>
 							<DateAttandanceBtn />
-							<Box position={"absolute"} top={5} right={6}>
+							<Box position={"absolute"} top={2} right={6}>
 								<Button leftIcon={<BsFilter size={24} />} variant={"outline"}>
 									More Filter
 								</Button>

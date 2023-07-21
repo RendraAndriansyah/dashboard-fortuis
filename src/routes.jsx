@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Attendance from "./pages/Attendance";
+import Schedule from "./pages/Schedule";
 
 const routes = createBrowserRouter([
 	{
@@ -21,6 +22,10 @@ const routes = createBrowserRouter([
 	{
 		path: "/attendance",
 		element: <Attendance />,
+	},
+	{
+		path: "/schedule",
+		element: <Schedule />,
 	},
 	{
 		path: "*",

@@ -22,6 +22,9 @@ import Content from "../components/layouts/Content";
 import MainLayout from "../components/layouts/MainLayout";
 import Navigation from "../components/layouts/Navigation";
 import SingleBarLayout from "../components/layouts/SingleBarLayout";
+import TableLeaveReport from "../components/fragments/TableLeaveReport";
+import ExportBtn from "../components/elements/button/ExportBtn";
+
 import {
 	dataAttandance,
 	dataDepartement,
@@ -37,8 +40,7 @@ import {
 	optionsVisitedArea,
 	textGender,
 	textStatus,
-} from "../dummyChart";
-import TableLeaveReport from "../components/fragments/TableLeaveReport";
+} from "../services/dummyChart";
 
 const Home = () => {
 	return (
@@ -47,6 +49,17 @@ const Home = () => {
 				<Navigation />
 				<Content>
 					<HeaderContent />
+					<Flex pt={4} justify={"space-between"}>
+						<Box>
+							<Text as={"h3"} fontSize={"3xl"} color={"gray.700"} fontWeight={"semibold"}>
+								Welcome back, John
+							</Text>
+							<Text as={"p"} color={"gray.500"}>
+								You're Working at ABC Company
+							</Text>
+						</Box>
+						<ExportBtn />
+					</Flex>
 					<Flex
 						justify={"space-between"}
 						pt={5}

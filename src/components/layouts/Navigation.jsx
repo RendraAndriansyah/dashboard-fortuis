@@ -1,8 +1,7 @@
-import { Flex, Text } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import CollapseBtn from "../elements/button/CollapseBtn";
 import Sidebar from "../fragments/Sidebar";
-
 const Navigation = () => {
 	const [collapse, setCollapse] = useState(false);
 	const [widthScreen, setWidthScreen] = useState(window.innerWidth);

@@ -1,12 +1,10 @@
 import { Box, Link as LinkChakra, ListIcon, Text } from "@chakra-ui/react";
 import React from "react";
 import { NavLink } from "react-router-dom";
+import activePath from "../../services/utils/activePath";
 
 export const MenuItem = ({ item, collapse }) => {
-	const { label } = item;
-	const { path } = item;
-	const { icon } = item;
-	const isActive = window.location.pathname;
+	const { label, path, icon } = item;
 
 	return (
 		<Box my={6}>
@@ -17,7 +15,7 @@ export const MenuItem = ({ item, collapse }) => {
 				gap={1}
 				_hover={{ textDecoration: "none", color: "white" }}
 				fontWeight="medium"
-				color={path === isActive ? "white" : "gray.400"}
+				color={path === activePath() ? "white" : "gray.400"}
 				w="full"
 				justifyContent={collapse ? "center" : ""}
 			>

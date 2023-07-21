@@ -41,7 +41,7 @@ const items = [
 	{
 		label: "Schedule",
 		icon: BsClock,
-		path: "/*",
+		path: "/schedule",
 	},
 ];
 

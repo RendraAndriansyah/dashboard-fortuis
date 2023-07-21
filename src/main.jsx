@@ -1,14 +1,13 @@
-import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import { ChakraProvider } from "@chakra-ui/react";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { RouterProvider } from "react-router-dom";
-import "./index.css";
-import routes from "./routes";
-import theme from "./customTheme";
 import { Provider } from "react-redux";
-import store from "./redux/store";
-import { PersistGate } from "redux-persist/integration/react";
+import { RouterProvider } from "react-router-dom";
 import { persistStore } from "redux-persist";
+import { PersistGate } from "redux-persist/integration/react";
+import theme from "./services/customTheme";
+import store from "./redux/store";
+import routes from "./routes";
 
 let persistor = persistStore(store);
 
