@@ -1,22 +1,8 @@
-import {
-	ButtonGroup,
-	Center,
-	IconButton,
-	TableContainer,
-	Table,
-	Tbody,
-	Text,
-	Th,
-	Thead,
-	Tr,
-	Tfoot,
-} from "@chakra-ui/react";
+import { Center, Table, TableContainer, Tbody, Th, Thead, Tr } from "@chakra-ui/react";
 import React from "react";
 
-import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons";
-import listLeaveReport from "./TableListUser";
-import ListLeaveReport from "./TableListUser";
 import DateAttandanceBtn from "../elements/button/DateAttandanceBtn";
+import ListLeaveReport from "./TableListUser";
 
 const customScroll = {
 	"&::-webkit-scrollbar": {

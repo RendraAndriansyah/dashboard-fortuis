@@ -1,35 +1,19 @@
-import {
-	Box,
-	Button,
-	Card,
-	Flex,
-	Table,
-	TableContainer,
-	Tbody,
-	Th,
-	Thead,
-	Tr,
-	Center,
-	Text,
-	IconButton,
-} from "@chakra-ui/react";
+import { Box, Button, Card, Center, Flex, Text } from "@chakra-ui/react";
 import React from "react";
 import { BsFilter } from "react-icons/bs";
 import DateAttandanceBtn from "../components/elements/button/DateAttandanceBtn";
 import HeaderContent from "../components/fragments/HeaderContent";
-import ListAttandance from "../components/fragments/ListAttandance";
 import ChartLine from "../components/fragments/chart/ChartLine";
 import Content from "../components/layouts/Content";
 import MainLayout from "../components/layouts/MainLayout";
 import Navigation from "../components/layouts/Navigation";
-import ExportBtn from "../components/elements/button/ExportBtn";
 import {
 	dataEmployeeOnLeaves,
 	dataLateEmployee,
 	dataPresentEmployee,
 } from "../services/dummyChart";
 
-import { HiOutlineChevronUpDown } from "react-icons/hi2";
+import TableAttandance from "../components/fragments/TableAttandance";
 import data from "../services/dummyTableAttandance";
 const Attendance = () => {
 	return (
@@ -75,97 +59,8 @@ const Attendance = () => {
 								</Button>
 							</Box>
 						</Center>
-						<TableContainer border={"1px"} rounded={"lg"} borderColor={"gray.400"}>
-							<Table>
-								<Thead bg={"blue.50"}>
-									<Tr>
-										<Th
-											colSpan={1}
-											rowSpan={2}
-											borderRight={"1px"}
-											borderColor={"gray.400"}
-										>
-											<Flex alignItems={"center"} justifyContent={"space-between"}>
-												Employee Name
-												<IconButton
-													icon={<HiOutlineChevronUpDown size={24} />}
-													variant={"unstyled"}
-												></IconButton>
-											</Flex>
-										</Th>
-										<Th
-											textAlign={"center"}
-											colSpan={2}
-											borderRight={"1px"}
-											borderBottom={"1px"}
-											borderColor={"gray.400"}
-										>
-											Check In
-										</Th>
-										<Th
-											textAlign={"center"}
-											colSpan={2}
-											borderRight={"1px"}
-											borderBottom={"1px"}
-											borderColor={"gray.400"}
-										>
-											Check Out
-										</Th>
-										<Th
-											colSpan={1}
-											rowSpan={2}
-											borderRight={"1px"}
-											borderColor={"gray.400"}
-										>
-											Status
-										</Th>
-										<Th
-											colSpan={1}
-											rowSpan={2}
-											borderBottom={"1px"}
-											borderColor={"gray.400"}
-										>
-											<Flex alignItems={"center"} justifyContent={"space-between"}>
-												Action
-												<IconButton
-													icon={<HiOutlineChevronUpDown size={24} />}
-													variant={"unstyled"}
-												></IconButton>
-											</Flex>
-										</Th>
-									</Tr>
-									<Tr>
-										<Th borderRight={"1px"} borderColor={"gray.400"}>
-											Time
-										</Th>
-										<Th borderRight={"1px"} borderColor={"gray.400"}>
-											Location
-										</Th>
-										<Th borderRight={"1px"} borderColor={"gray.400"}>
-											Time
-										</Th>
-										<Th borderRight={"1px"} borderColor={"gray.400"}>
-											Location
-										</Th>
-									</Tr>
-								</Thead>
-								<Tbody>
-									{data.map((data, i) => {
-										return (
-											<ListAttandance
-												key={i}
-												name={data.name}
-												checkinTime={data.checkInTime}
-												checkinLocation={data.checkOutLocation}
-												checkoutTime={data.checkOutTime}
-												checkoutLocation={data.checkOutLocation}
-												status={data.status}
-											/>
-										);
-									})}
-								</Tbody>
-							</Table>
-						</TableContainer>
+						<TableAttandance data={data} />
+
 						<Flex pt={3} justifyContent={"space-between"}>
 							<Box display={"flex"} gap={2}>
 								<Button variant={"outline"}>Previous</Button>
