@@ -37,7 +37,7 @@ const Schedule = () => {
 							gap={2}
 							flexDir={"column"}
 							css={customScroll}
-							maxH={"36vh"}
+							maxH={"51vh"}
 							overflow={"scroll"}
 						>
 							<ListSchedule />
