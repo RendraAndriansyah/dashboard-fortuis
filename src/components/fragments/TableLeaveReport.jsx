@@ -23,10 +23,10 @@ const TableLeaveReport = () => {
 			<Center pb={3}>
 				<DateAttandanceBtn />
 			</Center>
-			<TableContainer maxH={"35vh"} overflowY={"auto"} css={customScroll}>
-				<Table height={20}>
+			<TableContainer maxH={"45dvh"} overflowY={"auto"} css={customScroll}>
+				<Table size={"sm"} variant="simple">
 					<Thead bg={"gray.100"} position={"sticky"} top={0} zIndex={2}>
-						<Tr>
+						<Tr fontSize={"3xs"}>
 							<Th>Employee Name</Th>
 							<Th>Type of leave</Th>
 							<Th>total Days</Th>

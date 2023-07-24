@@ -16,9 +16,9 @@ ChartJS.register(LineElement, CategoryScale, LinearScale, Filler, PointElement);
 
 const CardStatistic = ({ data, title, isUptren }) => {
 	return (
-		<Card w={"-moz-fit-content"}>
-			<Flex gap={2}>
-				<Box w={"full"}>
+		<Card w={"-moz-initial"}>
+			<Flex gap={2} justifyContent={"space-between"}>
+				<Box w={"-moz-fit-content"}>
 					<CardHeader>
 						<Box>
 							<Heading size="sm">{title}</Heading>
@@ -49,8 +49,8 @@ const CardStatistic = ({ data, title, isUptren }) => {
 						</Text>
 					</Flex>
 				</Box>
-				<Box display={"flex"} alignItems={"center"} w={"-moz-fit-content"}>
-					<Line data={data} width={200} height={100} options={optionsLine} />
+				<Box display={"flex"} alignItems={"center"} w={150}>
+					<Line data={data} options={optionsLine} />
 				</Box>
 			</Flex>
 		</Card>

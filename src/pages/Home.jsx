@@ -73,7 +73,13 @@ const Home = () => {
 							</CardHeader>
 
 							<CardBody display={"flex"} gap={8} justifyContent={"space-between"}>
-								<Box display={"flex"} flexDir={"column"} gap={5} w={"40%"}>
+								<Box
+									display={"flex"}
+									flexDir={"column"}
+									gap={5}
+									w={"40%"}
+									bg={"teal.200`"}
+								>
 									<ChartLine
 										data={dataEmployee}
 										title={"Total Employee"}
@@ -240,6 +246,7 @@ const Home = () => {
 									borderColor={"gray.300"}
 									rounded={"3xl"}
 								/>
+
 								<Box w={"50%"}>
 									<TableLeaveReport />
 									<Flex justifyContent={"end"}>

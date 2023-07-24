@@ -50,7 +50,7 @@ const Attendance = () => {
 							isUptren={true}
 						/>
 					</Flex>
-					<Card px={6} py={4} mt={0}>
+					<Card mt={4} px={6} py={4}>
 						<Center pb={5}>
 							<DateAttandanceBtn />
 							<Box position={"absolute"} top={2} right={6}>
